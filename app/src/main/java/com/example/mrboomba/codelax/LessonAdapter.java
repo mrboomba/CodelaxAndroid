@@ -1,10 +1,11 @@
 package com.example.mrboomba.codelax;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,14 +15,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.R.drawable.ic_lock_lock;
-
-public class CustomAdapter extends BaseAdapter{
+public class LessonAdapter extends BaseAdapter{
     String [] result;
     Context context;
-    int [] imageId;
+    String resource;
     private static LayoutInflater inflater=null;
-    public CustomAdapter(Context mainActivity, String[] prgmNameList) {
+    public LessonAdapter(Context mainActivity, String[] prgmNameList) {
         // TODO Auto-generated constructor stub
         result=prgmNameList;
         context=mainActivity;
@@ -57,28 +56,30 @@ public class CustomAdapter extends BaseAdapter{
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;
-        rowView = inflater.inflate(R.layout.exercise_list, null);
+        rowView = inflater.inflate(R.layout.content_list, null);
         holder.tv=(TextView) rowView.findViewById(R.id.textView1);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
-        holder.img.setImageResource(android.R.drawable.ic_lock_lock);
+        holder.img.setImageResource(R.drawable.ic_action_action_lock);
+        holder.tv.setText(result[position]);
         if(position<1) {
-            holder.tv.setText(result[position]);
             holder.img.setVisibility(View.INVISIBLE);
-            rowView.setBackgroundColor(Color.GREEN);
+            rowView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(),R.color.choose,null));
+
+            rowView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    Intent intent = new Intent(context, ExerciseActivity.class);
+                    context.startActivity(intent);
+                    Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                }
+            });
         }
         else {
-            holder.tv.setText("");
             holder.img.setVisibility(View.VISIBLE);
-            rowView.setBackgroundColor(Color.DKGRAY);
         }
 
-        rowView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-            }
-        });
+
         return rowView;
     }
 

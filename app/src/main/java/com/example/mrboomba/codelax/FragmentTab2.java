@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 
 public class FragmentTab2 extends Fragment {
@@ -17,16 +14,13 @@ public class FragmentTab2 extends Fragment {
     ListView lv;
     Context context;
 
-    ArrayList prgmName;
-    public static String prgmNameList[];
+    public static String lessonList[];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        prgmNameList = new String[50];
-        for(int i=1;i<=50;i++){
-            prgmNameList[i-1] = "Level "+i;
-        }
+        lessonList =new String[]{"FLOWCHART","LOOP","IF-ELSE CONDITIONS","ARRAY","POINTER","FILE"};
+
     }
 
     @Override
@@ -37,7 +31,7 @@ public class FragmentTab2 extends Fragment {
 
 
         lv=(ListView) v.findViewById(R.id.listView);
-        lv.setAdapter(new CustomAdapter(getActivity(), prgmNameList));
+        lv.setAdapter(new LessonAdapter(getActivity(), lessonList));
 
 
         return v;

@@ -8,7 +8,8 @@ android:layout_height="match_parent"
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
     <FrameLayout
         android:id="@android:id/tabcontent"
         android:layout_width="fill_parent"
@@ -22,7 +23,7 @@ android:layout_height="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
-
+        android:background="@drawable/tab_layout"
 
         />
 

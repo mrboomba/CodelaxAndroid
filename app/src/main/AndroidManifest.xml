@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mrboomba.codelax">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,9 @@
         </activity>
         <activity android:name=".FragmentTab" />
         <activity android:name=".FragmentTab2" />
-        <activity android:name=".FragmentTab3"></activity>
+        <activity android:name=".FragmentTab3" />
+        <activity android:name=".LessonAdapter" />
+        <activity android:name=".ExerciseActivity"></activity>
     </application>
 
 </manifest>
