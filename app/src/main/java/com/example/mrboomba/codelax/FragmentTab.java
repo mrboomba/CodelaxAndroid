@@ -26,6 +26,8 @@ public class FragmentTab extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_fragment_tab, container, false);
         GridView gridview = (GridView) v.findViewById(R.id.gridview);
+        ImageView profile = (ImageView) v.findViewById(R.id.imageView);
+        profile.setImageResource(R.mipmap.hev1_cir);
         gridview.setAdapter(new ImageAdapter(getActivity()));
         return v;
     }

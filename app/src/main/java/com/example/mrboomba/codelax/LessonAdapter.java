@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.media.Image;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.content.res.AppCompatResources;
 import android.view.LayoutInflater;
@@ -18,10 +19,18 @@ import android.widget.Toast;
 public class LessonAdapter extends BaseAdapter{
     String [] result;
     Context context;
+    int[] images;
     String resource;
-    private static LayoutInflater inflater=null;
+    protected static LayoutInflater inflater=null;
     public LessonAdapter(Context mainActivity, String[] prgmNameList) {
         // TODO Auto-generated constructor stub
+        images = new int[]{R.mipmap.waterfall_1,
+                R.mipmap.forest,
+                R.mipmap.spruce,
+                R.mipmap.mill,
+                R.mipmap.mountains_1,
+                R.mipmap.island,
+                R.mipmap.forest};
         result=prgmNameList;
         context=mainActivity;
         inflater = ( LayoutInflater )context.
@@ -49,6 +58,7 @@ public class LessonAdapter extends BaseAdapter{
     {
         TextView tv;
         ImageView img;
+        ImageView arc;
 
     }
     @Override
@@ -59,8 +69,10 @@ public class LessonAdapter extends BaseAdapter{
         rowView = inflater.inflate(R.layout.content_list, null);
         holder.tv=(TextView) rowView.findViewById(R.id.textView1);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
+        holder.arc = (ImageView) rowView.findViewById(R.id.arc_pic);
         holder.img.setImageResource(R.drawable.ic_action_action_lock);
         holder.tv.setText(result[position]);
+        holder.arc.setImageResource(images[position]);
         if(position<1) {
             holder.img.setVisibility(View.INVISIBLE);
             rowView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(),R.color.choose,null));

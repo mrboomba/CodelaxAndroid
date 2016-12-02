@@ -16,28 +16,23 @@ public class FragmentTab3 extends Fragment {
     ListView lv;
     Context context;
 
-    ArrayList prgmName;
-    public static String lessonNameList[];
+    public static String friendList[];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        lessonNameList = new String[50];
-        lessonNameList[0] = "Flow Chart";
-        for(int i=1;i<50;i++){
-            lessonNameList[i] = "Level "+i;
-        }
+        friendList =new String[] {"May","Boomba","Pare"};
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_fragment_tab2, container, false);
+        View v = inflater.inflate(R.layout.activity_fragment_tab3, container, false);
 
 
 
         lv=(ListView) v.findViewById(R.id.listView);
-        lv.setAdapter(new LessonAdapter(getActivity(), lessonNameList));
+        lv.setAdapter(new FriendAdapter(getActivity(), friendList));
 
 
         return v;
