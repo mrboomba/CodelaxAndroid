@@ -1,5 +1,7 @@
 package com.example.mrboomba.codelax;
 
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.content.res.ResourcesCompat;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity
 
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
+
         tabHost.addTab(
                 tabHost.newTabSpec("tab1").setIndicator(null, ResourcesCompat.getDrawable(getResources(),R.drawable.tab_selector_home,null)),
                 FragmentTab.class, null);
@@ -32,4 +35,6 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+    
 }

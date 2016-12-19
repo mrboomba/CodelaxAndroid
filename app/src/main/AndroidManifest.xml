@@ -6,11 +6,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_codeweed"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +20,25 @@
         <activity android:name=".FragmentTab" />
         <activity android:name=".FragmentTab2" />
         <activity android:name=".FragmentTab3" />
+        <activity android:name=".LessonListAdapter" />
+        <activity android:name=".ChallengeActivity" />
+        <activity android:name=".ChallengeActivity2" />
+        <activity android:name=".ChallengeActivity3" />
+        <activity android:name=".ChallengeActivity4" />
+        <activity android:name=".ChallengeActivity5" />
+        <activity android:name=".ChallengeAcceptActivity" />
+        <activity android:name=".ChallengeAcceptActivity2" />
+        <activity android:name=".ChallengeAcceptActivity3" />
+        <activity android:name=".ChallengeAcceptActivity4" />
+        <activity android:name=".ChallengeAcceptActivity5" />
+        <activity android:name=".LessonActivity" />
+        <activity android:name=".YoutubeFragment" />
         <activity android:name=".LessonAdapter" />
-        <activity android:name=".ExerciseActivity"></activity>
+        <activity android:name=".Lesson2Activity" />
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashPage" />
+        <activity android:name=".AddFriendActivity"></activity>
     </application>
 
 </manifest>
